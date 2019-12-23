@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+
+<!-- 分页 -->
+<nav aria-label="Page navigation" class="pageQsTable" style="text-align:center;" th:fragment="pageQsTable">
+    <div class="col-lg-12 color-rect-border">
+        <ul class="pagination qishon_Pagination fl">
+            <li class="PreviousSelect" style="width: 100px">
+                <a aria-label="" style="padding: 6px 0px" href="javascript:void(0);"><span>每页&nbsp;</span></a>
+                <a aria-label="" style="padding: 6px 0px;" href="javascript:void(0);">
+                    <select type="select" class="form-control pageSize" style="height: 18px; padding: 0px;">
+                        <option value="12">12</option>
+                        <option value="16">16</option>
+                        <option value="20">20</option>
+                        <option value="32">32</option>
+                    </select>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="pagination qishon_Pagination fr">
+            <li class="PreviousFirst">
+                <a aria-label="Pre" href="javascript:void(0);">
+                    <span aria-hidden="true">首页</span>
+                </a>
+            </li>
+            <li class="Previous">
+                <a aria-label="Pre" href="javascript:void(0);">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="num-list">
+                <a href="javascript:void(0);">
+                    <span class="text-primary">1</span>
+                </a>
+            </li>
+            <li class="Nexts">
+                <a aria-label="Next" href="javascript:void(0);">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+            <li class="LastPage">
+                <a aria-label="Next" href="javascript:void(0);">
+                    <span aria-hidden="true">尾页</span>
+                </a>
+            </li>
+
+            <li class="goPageLi">
+                 <label  style="padding: 3px 2px;font-weight: 400;">
+                    <input type="text" value="1" class="form-control fl pageNum" style="width: 40px;height: 18px;"/>
+                     <a aria-label="Pre" href="javascript:void(0);" style="padding: 3px 0px">
+                         <span aria-hidden="true" class="goPage" style="height: 18px; padding: 0px; margin: 0px;" value="GO">跳转</span>
+                     </a>
+                </label>
+            </li>
+        </ul>
+    </div>
+</nav>
+</html>

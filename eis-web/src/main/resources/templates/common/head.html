@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base th:href="@{/}"/>
+    <meta charset="UTF-8" />
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 优先使用 IE 最新版本和 Chrome -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/plugins/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/normalize.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/tipsy.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/bootstrapValidator.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/bootstrap-datepicker.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/select2.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/jquery.fileupload.css}"/>
+    <link rel="stylesheet" th:href="@{/css/theme.blue.css}"/>
+    <link rel="stylesheet" th:href="@{/css/theme.css}"/>
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_z938s1q2qql4n29.css"/>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery-2.1.1.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.fileDownload.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/select2.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/select2.full.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.cookie.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/artDialog/jquery.artDialog.source.js?skin=blue}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/artDialog/plugins/iframeTools.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/bootstrap.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.tipsy.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/bootstrapValidator.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/bootstrap-datepicker.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/Transfer.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.ui.widget.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.fileupload.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.fileupload-process.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery.fileupload-ui.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/menu.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/header.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/base.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/TableCount.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/tableList.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/changeTable.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/qs-transfer.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/button.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/panel.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/table.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/qs.model.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/jquery.qrcode.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/jquery.print.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/LodopFuncs.js}"></script>
+
+    <style id="qrcodeStyle">
+        .qrcode {
+            border: #0d0f10 1px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+    <script th:inline="javascript" >
+        let userInfo = [[${session.userInfo}]];
+    </script>
+</head>
+</html>

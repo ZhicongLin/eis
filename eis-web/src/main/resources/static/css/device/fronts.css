@@ -1,0 +1,215 @@
+/*min-height: 1px 是为了防止文本的溢出*/
+.slider {
+    position: relative;
+    overflow: hidden;
+    min-height: 1px;
+}
+
+.slider-groups {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.slider-item {
+    float: left;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slider-item a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.slider-item img {
+    display: block;
+    width: 100%;
+}
+
+/*    right: 0;left: 0; 是为了使width为100%，
+有了宽度text-align才能生效，当然你直接写width:100%也行*/
+.dots {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 12px;
+    text-align: center;
+    font-size: 0;
+}
+
+.dot {
+    display: inline-block;
+    margin: 0 4px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.36);
+
+}
+
+.active {
+    width: 20px;
+    border-radius: 5px;
+    background: rgb(21, 128, 28);
+}
+
+.intro .panel {
+    border-radius: 0;
+}
+
+.intro .panel-heading {
+    border-radius: 0;
+    padding: 10px 1.4rem;
+}
+
+.intro .jumbotron {
+    margin: 0 2rem;
+    border-radius: 0.5rem;
+    background-color: #175E8C;
+    padding: 0 0.4rem;
+}
+
+.intro .jumbotron table {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+}
+
+.intro td {
+    font-size: 1.2rem !important;
+    color: #0F3A56 !important;
+}
+
+.intro .jumbotron td {
+    border: 0;
+    font-size: 1.2rem !important;
+    color: #f0f0f0 !important;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+body {
+    font-family: Helvetica, Tahoma, Arial, PingFang SC, Hiragino Sans GB, Heiti SC, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;
+    margin: 0;
+}
+
+.recode-body {
+    color: #0F3A56;
+    font-size: 16px
+}
+
+.recode-body h3 {
+    margin: 5px;
+    color: #337ab7
+}
+
+.recode-body .panel-body p {
+    color: #0F3A56;
+    font-size: 16px;
+    margin: 15px 5px 5px;
+}
+
+.recode-body .panel-body ul {
+    font-size: 16px;
+    border: 1px solid #d5d5d5;
+    padding: 6px;
+    margin: 2px;
+    border-radius: 5px;
+}
+
+.recode-body .table td {
+    border: 0;
+    font-size: 16px;
+    color: #6f6f6f;
+    margin: 1px;
+    padding: 1px;
+}
+
+.recode-list .table td {
+    border: 0;
+    font-size: 16px;
+    color: #6f6f6f;
+    margin: 1px;
+    padding: 1px;
+}
+
+.recode-body .table .lastTd {
+    width: 80px;
+    text-align: right;
+    color: #d5d5d5;
+}
+
+.recode-list .table .lastTd {
+    width: 40px;
+    text-align: left;
+    color: #d5d5d5;
+}
+
+.recode-body .glyphicon {
+    font-size: 16px;
+    margin: 2px;
+    color: #d5d5d5;
+}
+
+.recode-body .table .glyphicon {
+    font-size: 22px;
+    margin: 2px;
+    color: #d5d5d5;
+}
+
+.recode-list .table .glyphicon {
+    font-size: 22px;
+    margin: 2px;
+    color: #d5d5d5;
+}
+
+.recode-body .glyphicon-active {
+    color: #4cae4c !important;
+}
+
+.recode-list .glyphicon-active {
+    color: #4cae4c !important;
+}
+
+.recode-body .glyphicon-error-active {
+    color: #ae2904 !important;
+}
+.recode-list .glyphicon-error-active {
+    color: #ae2904 !important;
+}
+
+.recode-body .form-control {
+    font-size: 16px;
+}
+
+.recode-body .input-group {
+    margin: 3px;
+}
+
+.recode-body .input-group-addon {
+    width: 120px;
+    background-color: #ffffff !important;
+    text-align: right !important;
+}
+
+.recode-list .descBody {
+    overflow: hidden;
+    word-wrap:break-word;
+    word-break:break-all;
+    border: 0;
+    font-size: 16px;
+}

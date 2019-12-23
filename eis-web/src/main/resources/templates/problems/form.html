@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<body>
+
+<div th:fragment="saveModalForm">
+  <!--****************************************新增弹窗START******************************************************************-->
+  <div class="modal fade modal-window modal-window-xs" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+       style="width: 80%;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <form class="form-horizontal" id="addForm" action="/users/teams" method="get">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true" style="font-size: 30px">&times;</span></button>
+            <h3 class="modal-title">编辑</h3>
+          </div>
+          <div class="modal-body col-md-12">
+            <div class="form-group ">
+              <label class="col-lg-3 control-label require">名称:</label>
+              <div class="col-lg-8">
+                <input type="hidden" class="form-control" name="id"/>
+                <input type="text" class="form-control" name="name"/>
+              </div>
+            </div>
+            <div class="form-group ">
+              <label class="col-lg-3 control-label require">英文名称:</label>
+              <div class="col-lg-8">
+                <input type="text" class="form-control" name="enName"/>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary confirm">确定</button>
+            <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--****************************************新增弹窗END******************************************************************-->
+</div>
+</body>
+</html>

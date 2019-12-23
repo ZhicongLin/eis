@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+>
+<body>
+<div th:fragment="saveModalForm">
+  <!--****************************************新增弹窗START******************************************************************-->
+  <div class="modal fade modal-window modal-window-xs" id="saveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+       style="width: 80%;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <form class="form-horizontal" id="addForm" action="/device/info/save" method="post" enctype="multipart/form-data">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                    aria-hidden="true" style="font-size: 30px">&times;</span></button>
+            <h3 class="modal-title">编辑站点信息</h3>
+          </div>
+          <div class="modal-body col-md-12">
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">站点名称:</label>
+                  <div class="col-lg-8">
+                      <input type="hidden" class="form-control" name="id"/>
+                      <input type="text" class="form-control" name="name"/>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">站点型号:</label>
+                  <div class="col-lg-8">
+                      <input type="text" class="form-control" name="model"/>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">产权单位:</label>
+                  <div class="col-lg-8">
+                      <input type="text" class="form-control" name="company"/>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">承包商:</label>
+                  <div class="col-lg-8">
+                      <input type="text" class="form-control" name="contractor"/>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">站点资质1:</label>
+                  <div class="col-lg-8">
+                      <img src="/images/fileUpload.png" width="120" height="80" style="margin: 12px"/>
+                      <input type="file" class="form-control " name="file1"  style="display: none"/>
+                      <input type="text" class="form-control file" name="image1"/>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">站点资质2:</label>
+                  <div class="col-lg-8">
+                      <img src="/images/fileUpload.png" width="120" height="80" style="margin: 12px"/>
+                      <input type="file" class="form-control " name="file2"  style="display: none"/>
+                      <input type="text" class="form-control file" name="image2"/>
+                  </div>
+              </div>
+              <div class="col-md-12">
+                  <label class="col-lg-3 control-label require">操作资格:</label>
+                  <div class="col-lg-8">
+                      <img src="/images/fileUpload.png" width="120" height="80" style="margin: 12px"/>
+                      <input type="file" class="form-control " name="file3"  style="display: none"/>
+                      <input type="text" class="form-control file" name="image3"/>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary confirm">确定</button>
+            <button type="button" class="btn btn-default cancel" data-dismiss="modal">取消</button>
+          </div>
+          </form>
+      </div>
+    </div>
+  </div>
+  <!--****************************************新增弹窗END******************************************************************-->
+</div>
+</body>
+</html>

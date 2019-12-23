@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head th:replace="common/head::head"></head>
+<body>
+<div th:replace="common/header :: header"></div>
+<div th:replace="common/menu::menu"></div>
+<div>
+    <input type="hidden" th:value="${myHost}" id="myHost"/>
+    <div class="content view-page-left">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span style="font-size: 24px" class="glyphicon glyphicon-user"></span>
+                <span style="font-size: 24px">站点巡检记录</span>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-default col-md-3 device-lists" style="padding: 0;overflow: hidden !important;">
+                    <div class="panel-heading" style="position: relative;top: 0;">
+                        <span style="font-size: 24px">巡检站点</span>
+                    </div>
+                    <div class="panel-body panel-body-list" style="overflow: auto;">
+                    </div>
+                </div>
+                <div class="panel panel-default col-md-8 recode-lists" style="padding: 0;margin-left: 5px">
+                    <div class="panel-heading">
+                        <span style="font-size: 24px">站点记录</span>
+                    </div>
+                    <div class="panel-body panel-body-list">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/scripts/recode/list.js}"></script>
+</body>
+</html>

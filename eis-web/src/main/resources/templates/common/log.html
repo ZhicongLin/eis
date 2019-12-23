@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout">
+<head th:replace="common/head::head"></head>
+<body>
+<div th:replace="common/header :: header"></div>
+<div th:replace="common/menu::menu"></div>
+<div class="section">
+    <div class="content view-page-left">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <span style="font-size: 24px" class="glyphicon glyphicon-log-in"></span>
+                <span style="font-size: 24px">日志管理</span>
+            </div>
+            <iframe th:src="${session.logSrc}" class="panel-body padding--min label--border col-sm-12"></iframe>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        /*页面加载相关元素状态初始化*/
+        $.fn.initMenu(".qishon-log");
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>左侧菜单</title>
+</head>
+<body>
+<!--默认菜单项-->
+<div class="menu theme close-menu" th:fragment="menu">
+	<!-- left nav -->
+	<div class="menu-nav">
+		<div class="fold-menu"><i class="icon iconfont icon-zhankai-caidan"></i></div>
+
+		<div class="sidebar-nav">
+			<div class="sidebar-title" >
+				<i class="icon iconfont icon-arrow-right"></i>
+				<span>站点管理</span>
+			</div>
+			<ul>
+				<li class="device-list">
+					<a th:href="@{/device/index}" >
+						<div class="icon-div">
+							<i class="glyphicon glyphicon-list-alt"></i>
+						</div>
+						<span>站点管理</span>
+					</a>
+				</li>
+				<li class="device-info-list">
+					<a th:href="@{/device/info/index}">
+						<div class="icon-div">
+							<i class="glyphicon glyphicon-transfer"></i>
+						</div>
+						<span>站点信息管理</span>
+					</a>
+				</li>
+				<li class="recodes-list">
+					<a th:href="@{/recodes/index}" >
+						<div class="icon-div">
+							<i class="glyphicon glyphicon-log-in"></i>
+						</div>
+						<span>站点巡检记录</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="sidebar-nav">
+			<div class="sidebar-title">
+				<i class="icon iconfont icon-arrow-right"></i>
+				<span>巡检管理</span>
+			</div>
+			<ul>
+				<li class="user-list">
+					<a th:href="@{/users/index}">
+						<div class="icon-div">
+							<i class="glyphicon glyphicon-fire"></i>
+						</div>
+						<span>技术人员管理</span>
+					</a>
+				</li>
+				<li class="item-list">
+					<a th:href="@{/items/index}" >
+						<div class="icon-div">
+							<i class="glyphicon glyphicon-tasks"></i>
+						</div>
+						<span>巡检内容管理</span>
+					</a>
+				</li>
+				<li class="problems-list">
+					<a th:href="@{/problems/index}" >
+						<div class="icon-div">
+							<i class="glyphicon glyphicon-th-large"></i>
+						</div>
+						<span>巡检点管理</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <base th:href="@{/}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/theme.css}"/>
+    <link rel="stylesheet" th:href="@{/css/device/fronts.css}"/>
+    <script type="application/javascript" th:src="@{/scripts/plugins/jquery-2.1.1.min.js}"></script>
+    <script type="application/javascript" th:src="@{/scripts/device/front.js}"></script>
+</head>
+<body class="login-body" style="color: #ffffff;font-size: 16px !important;">
+<div>
+    <div class="intro" style="background-color: #337ab7">
+        <div class="panel panel-primary" style="border: 0">
+            <div class="panel-heading">
+                <span style=" text-align: center;
+                    width: calc(100%);
+                    word-wrap: break-word;
+                    font-size: 3rem;
+                    font-weight: 700;
+                    display: inline-block;">
+                    站点巡检
+                </span></div>
+            <div class="panel-body" style="background-color: #337ab7;margin-top: 0;padding-top: 0;">
+                <div class="jumbotron">
+                    <table class="table table-bordered">
+                        <tr>
+                            <td style="width: 7rem;text-align: center">历史信息</td>
+                            <td style="text-align: right"><span id="recodeRun" style="color: #f0f0f0" >查看全部 <a style="color: #f0f0f0" th:text="${count}"></a> 条记录 &gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 7rem;text-align: center">记录时间</td>
+                            <td th:text="${device.ipqcTime}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 7rem;text-align: center">记录人员</td>
+                            <td th:text="${device.ipqcUser != null ? device.ipqcUser.ipqcName : ''}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 7rem;text-align: center">记录单</td>
+                            <td>站点巡检记录</td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="margin: 2rem;font-size:1.4rem">添加记录</p>
+                <div class="jumbotron" id="recode"
+                     style="margin: 2rem;border-radius: 0.5rem;background-color: #f0f0f0;padding:0.4rem;color: #5e5e5e;height: 4.5rem;line-height: 3.5rem">
+                    <p style="float: left;font-size:1.4rem">站点巡检记录</p>
+                    <p class="glyphicon glyphicon-plus"
+                       style="width: 3rem;float: right;margin: 0; padding: 1rem;font-size:1.4rem"></p>
+                </div>
+            </div>
+            <div class="panel panel-default"  style="border: 0">
+                <div class="panel-heading" style="text-align: center;
+                    width: calc(100%);padding: 5px"><h3 style="margin: 5px;color: #0F3A56">站点信息</h3></div>
+                <div class="panel-body">
+                    <input type="hidden" id="deviceId" th:value="${device.id}"/>
+                    <table class="table table-bordered" style="color: #5e5e5e;font-size: 2rem">
+                        <tr>
+                            <td style="width: 8rem;text-align: center">站点名称</td>
+                            <td th:text="${device.deviceInfo.name}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">站点型号</td>
+                            <td th:text="${device.deviceInfo.model}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">站点编号</td>
+                            <td th:text="${device.deviceCode}" id="code"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">产权单位</td>
+                            <td th:text="${device.deviceInfo.company}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">总承包商</td>
+                            <td th:text="${device.deviceInfo.contractor}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">所在位置</td>
+                            <td th:text="${device.address}" id="addr"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">登记日期</td>
+                            <td th:text="${device.createTime}"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 8rem;text-align: center">站点负责人</td>
+                            <td th:text="${device.ipqcUser != null ? device.ipqcUser.ipqcName : ''}"></td>
+                        </tr>
+                    </table>
+                    <input type="hidden" class="img1" th:value="${device.deviceInfo.image1}"/>
+                    <input type="hidden" class="img1" th:value="${device.deviceInfo.image2}"/>
+                    <input type="hidden" class="img3" th:value="${device.deviceInfo.image3}"/>
+                    <p class="img3" style="color: #0F3A56; font-size: 1.4rem;margin: 5px">操作资格</p>
+                    <img class="img3" th:src="${device.deviceInfo.image3}" style="width: 100%" alt=""/>
+
+                    <div class="slider img1" >
+                        <p class="img1" style="color: #0F3A56; font-size: 1.4rem;margin: 5px">站点资质</p>
+                        <div class="slider-group img1" style="position: inherit;">
+                            <div class="slider-item">
+                                <a href="javascript:;">
+                                    <img th:src="${device.deviceInfo.image1}"  style="width: 100%"/>
+                                </a>
+                            </div>
+                            <div class="slider-item">
+                                <a href="javascript:;">
+                                    <img th:src="${device.deviceInfo.image2}"  style="width: 100%"/>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dots img1">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <a style="color: #33bbee; font-size: 1.4rem;margin: 5px">安全操作规范 ></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:inline="javascript" >
+    $(function () {
+        let successFlag = [[${success_flag}]];
+        if (successFlag && successFlag === 1) {
+            alert("已提交保存");
+        }  else if (successFlag && successFlag === 0) {
+            alert("保存失败")
+        }
+    });
+</script>
+</body>
+</html>

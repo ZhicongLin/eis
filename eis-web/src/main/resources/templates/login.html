@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <base th:href="@{/}"/>
+    <link rel="stylesheet" th:href="@{/css/plugins/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/theme.css}"/>
+</head>
+<body class="login-body" onLoad="document.user.username.focus()">
+<div id="particles">
+    <div class="intro">
+        <div class="qishonLogin__header">
+            <h1>&nbsp;&nbsp;后台管理</h1>
+        </div>
+        <div class="qishonLogin">
+            <form th:action="@{/users/login}" method="post" class="form-horizontal" name="user">
+                <span class="heading">用户登录</span>
+                <div class="login-form-group">
+                    <input type="text" name="username" class="form-control login-form-control" placeholder="用户名或电子邮件"/>
+                    <i class="iconfont icon-fa-user"></i>
+                </div>
+                <div class="login-form-group help">
+                    <input type="password" name="password" class="form-control login-form-control" placeholder="密　码"/>
+                    <i class="iconfont icon-fa-lock"></i>
+                    <a href="#" class="iconfont icon-questioncircle"></a>
+                </div>
+                <div class="login-form-group login-btn">
+                    <button type="submit" class="btn btn-info login-submit">登录</button>
+                </div>
+                <!--<div class="reset-register">
+                    <a href="###">忘记密码</a> &nbsp;&nbsp;
+                </div>-->
+            </form>
+        </div>
+    </div>
+</div>
+<script type="application/javascript" th:src="@{/scripts/plugins/jquery-2.1.1.min.js}"></script>
+<script type="application/javascript" th:src="@{/scripts/plugins/jquery.particleground.min.js}"></script>
+<script>
+    $('#particles').particleground({
+        dotColor: '#22262a',
+        lineColor: '#143339'
+    });
+</script>
+</body>
+</html>
