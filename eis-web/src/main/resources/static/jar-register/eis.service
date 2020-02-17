@@ -1,0 +1,12 @@
+[Unit]
+Description=eis for java
+After=syslog.target network.target remote-fs.target nss-lookup.target
+ 
+[Service]
+Type=forking
+ExecStart=/usr/local/webservice/server/eis-start.sh
+ExecStop=/usr/local/webservice/server/eis-stop.sh
+PrivateTmp=true
+ 
+[Install]
+WantedBy=multi-user.target

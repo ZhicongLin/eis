@@ -1,0 +1,6 @@
+eis.service 放入到/usr/lib/systemd/system/
+start和stop两个文件分别放入指定位置
+
+systemctl enable eis
+systemctl start eis
+systemctl top eis
