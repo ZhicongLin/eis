@@ -67,10 +67,11 @@ $(function () {
                 data: params,
                 dataType: "json",
                 success: function (msg) {
-                    $.success("密码修改成功");
+                    $("#modifyPassword .cancel").click();
+                    $.success("密码修改成功", 3000);
                 },
                 error: function (msg) {
-                    $.error(msg.responseJSON.errorMsg);
+                    $.error(msg.responseJSON.message);
                 }
             })
         }

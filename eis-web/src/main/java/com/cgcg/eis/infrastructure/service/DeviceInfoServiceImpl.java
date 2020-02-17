@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class DeviceInfoServiceImpl implements DeviceInfoService {
@@ -31,5 +32,16 @@ public class DeviceInfoServiceImpl implements DeviceInfoService {
     @Override
     public void save(DeviceInfo deviceInfo) {
         this.deviceInfoRepository.save(deviceInfo);
+    }
+
+    @Override
+    public DeviceInfo findById(long id) {
+        final Optional<DeviceInfo> odi = this.deviceInfoRepository.findById(1L);
+        if (odi.isPresent()) {
+            return odi.get();
+        }
+        final DeviceInfo deviceInfo = new DeviceInfo();
+        deviceInfo.setId(1L);
+        return this.deviceInfoRepository.save(deviceInfo);
     }
 }

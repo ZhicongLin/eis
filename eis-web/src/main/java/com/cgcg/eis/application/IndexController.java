@@ -24,7 +24,7 @@ public class IndexController {
      */
     @GetMapping
     public String homePage() {
-        return "index";
+        return "redirect:/recodes/index";
     }
 
     /**
@@ -37,7 +37,7 @@ public class IndexController {
      */
     @GetMapping(value = "index")
     public String index(Model model) {
-        return "index";
+        return "redirect:/recodes/index";
     }
 
     /**

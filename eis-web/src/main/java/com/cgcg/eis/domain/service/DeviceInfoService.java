@@ -7,4 +7,6 @@ public interface DeviceInfoService {
     PageInfo<DeviceInfo> findList(String keyword, int pageSize, int pageNum);
 
     void save(DeviceInfo deviceInfo);
+
+    DeviceInfo findById(long id);
 }

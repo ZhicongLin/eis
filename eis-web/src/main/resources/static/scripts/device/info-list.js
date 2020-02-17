@@ -46,8 +46,8 @@ $(function () {
     $(".addButton").click(function () {
         qsTable.add();
     });    //表单确认按钮
-    $("#saveModal button.confirm").click(function () {
-        let $saveModalForm = $("#saveModal #addForm");
+    $("#saveModal button.confirm, #window-body button.confirm" ).click(function () {
+        let $saveModalForm = $(this).parents('form');
         $saveModalForm.submit();
     });
 

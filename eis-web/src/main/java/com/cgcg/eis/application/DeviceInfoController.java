@@ -26,6 +26,8 @@ public class DeviceInfoController {
     private String fileHome;
     @GetMapping("index")
     public String index(Model model) {
+        DeviceInfo deviceInfo =  this.deviceInfoService.findById(1);
+        model.addAttribute("info", deviceInfo);
         return "device/info/index";
     }
 
@@ -37,8 +39,9 @@ public class DeviceInfoController {
 
     @GetMapping("/devices")
     @ResponseBody
-    public PageInfo<DeviceInfo> devices(String keyword, int pageSize, int pageNum) {
-        return this.deviceInfoService.findList(keyword, pageSize, pageNum);
+    public PageInfo<DeviceInfo> devices(String keyword, Integer pageSize, Integer pageNum) {
+        return new PageInfo<>();
+//        return this.deviceInfoService.findList(keyword, pageSize, pageNum);
     }
 
     @PostMapping("/save")

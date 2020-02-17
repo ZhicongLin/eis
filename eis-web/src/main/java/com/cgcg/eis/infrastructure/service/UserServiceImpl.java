@@ -72,6 +72,8 @@ public class UserServiceImpl implements UserService {
                 adminUser.setUserPwd(confirmPassword);
                 adminUser.setUpdateTime(new Date());
                 this.adminUserRepository.save(adminUser);
+            } else {
+                throw new RuntimeException("旧密码错误");
             }
         }
     }

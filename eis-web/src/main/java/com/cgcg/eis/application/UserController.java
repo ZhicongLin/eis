@@ -6,6 +6,7 @@ import com.cgcg.eis.domain.vo.UserLoginVo;
 import com.cgcg.eis.infrastructure.common.Constant;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -59,7 +60,15 @@ public class UserController {
     @PutMapping("pwd")
     @ResponseBody
     public int modifyPwd(Long id, String oldPassword, String confirmPassword) {
-        this.userService.modifyPassword(id, oldPassword, confirmPassword);
+        if (StringUtils.isBlank(confirmPassword)) {
+            throw new RuntimeException("新密码不能为空");
+        }
+        if (confirmPassword.trim().length() < 6) {
+            throw new RuntimeException("密码不能小于6位");
+        }
+        if (!oldPassword.equals(confirmPassword)) {
+            this.userService.modifyPassword(id, oldPassword, confirmPassword);
+        }
         return 1;
     }
 
