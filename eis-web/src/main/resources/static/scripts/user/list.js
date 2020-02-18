@@ -32,6 +32,12 @@ $(function () {
             $(td).append(value == 1 ? "<span class='glyphicon glyphicon-ok text-green' />" : "<span class='glyphicon glyphicon-remove text-danger'/>")
             return 'VoidUndo';
         },
+        add: function () {
+            $("#saveModal").modal("show");
+            let $saveModalForm = $("#saveModal #addForm");
+            $saveModalForm.cleanForm();
+            $("#saveModal #addForm .modal-footer button").show();
+        },
         edit: function (user) {
             $("#saveModal").modal("show");
             let $saveModalForm = $("#saveModal #addForm");
