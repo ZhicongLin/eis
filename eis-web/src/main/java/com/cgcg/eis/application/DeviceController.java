@@ -1,5 +1,6 @@
 package com.cgcg.eis.application;
 
+import com.cgcg.eis.domain.model.Constant;
 import com.cgcg.eis.domain.model.Device;
 import com.cgcg.eis.domain.repository.ConstantRepository;
 import com.cgcg.eis.domain.service.DeviceService;
@@ -25,14 +26,16 @@ public class DeviceController {
 
     @GetMapping("index")
     public String index(Model model) {
-        model.addAttribute("myHost", this.constantRepository.findFirstByParamKey("my_host"));
+        final Constant myHost = this.constantRepository.findFirstByParamKey("my_host");
+        model.addAttribute("myHost", myHost.getParamVal());
         return "device/index";
     }
 
 
     @GetMapping("form")
     public String form(Model model) {
-        model.addAttribute("myHost", this.constantRepository.findFirstByParamKey("my_host"));
+        final Constant myHost = this.constantRepository.findFirstByParamKey("my_host");
+        model.addAttribute("myHost", myHost.getParamVal());
         return "device/form";
     }
 

@@ -28,6 +28,36 @@ $(function () {
             });
             return 'VoidUndo';
         },
+        show: function(device) {
+            let rowQrCode =  $("#rowQrCode");
+            let doc = rowQrCode.find('.rowQrCode');
+            rowQrCode.show();
+            var elText = document.getElementById("text");
+            rowQrCode.find('.rowQrCode').empty();
+            rowQrCode.find('.rowQrCode').qrcode({   //选择存放链接容器
+                render: "canvas",
+                width: 128, //width height如果不写默认是 256 256
+                height: 128,
+                text: toUtf8(elText.value + "?code=" + device.qrCodeNo) //将链接容器的内容赋值给text
+            });
+            $("#device-titles").html(device.deviceCode);
+            rowQrCode.find('.btn-default').click(function () {
+                rowQrCode.hide();
+            });
+            $('canvas').each(function () {
+                //进行方法转换
+                var img = canvasToImage(this);
+                $(this).parent('div').append(img);
+                $(this).hide();
+            });
+            rowQrCode.find('.btn-primary').click(function () {
+                var LODOP=getLodop(document.getElementById('LODOP_OB'),document.getElementById('LODOP_EM'));
+                let doc = rowQrCode.find('.rowQrCode');
+                var strFormHtml="<body>"+doc.html()+"</body>";
+                LODOP.ADD_PRINT_HTM(10,10, "100%", "100%", strFormHtml);
+                LODOP.PREVIEW();
+            });
+        },
         add: function () {
             $("#saveModal").modal("show");
             let $saveModalForm = $("#saveModal #addForm");
@@ -64,6 +94,7 @@ $(function () {
     });
     //点击添加
     $(".addButton").click(function () {
+        $("#rowQrCode").hide();
         qsTable.add();
     });    //表单确认按钮
     $("#saveModal button.confirm").click(function () {

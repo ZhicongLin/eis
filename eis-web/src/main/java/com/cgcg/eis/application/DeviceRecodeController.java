@@ -1,5 +1,6 @@
 package com.cgcg.eis.application;
 
+import com.cgcg.eis.domain.model.Constant;
 import com.cgcg.eis.domain.model.IpqcItem;
 import com.cgcg.eis.domain.repository.ConstantRepository;
 import com.cgcg.eis.domain.service.IpqcItemService;
@@ -25,7 +26,8 @@ public class DeviceRecodeController {
     private ConstantRepository constantRepository;
     @GetMapping("index")
     public String index(Model model) {
-        model.addAttribute("myHost", this.constantRepository.findFirstByParamKey("my_host"));
+        final Constant myHost = this.constantRepository.findFirstByParamKey("my_host");
+        model.addAttribute("myHost", myHost.getParamVal());
         return "recode/index";
     }
 

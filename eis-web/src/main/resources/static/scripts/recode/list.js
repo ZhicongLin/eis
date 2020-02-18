@@ -25,7 +25,7 @@ $(function () {
     loadDevice();
 
     function loadDevice() {
-        $.getJSON("/device/devices", {pageNum: 1, pageSize: 12}, function (data) {
+        $.getJSON("/device/devices", {pageNum: 1, pageSize: 12000}, function (data) {
             let results = data.list;
             results.forEach(function (row) {
                 let user = row.ipqcUser;
