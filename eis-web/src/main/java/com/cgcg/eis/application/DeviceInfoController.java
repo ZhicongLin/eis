@@ -22,7 +22,7 @@ public class DeviceInfoController {
     @Resource
     private DeviceInfoService deviceInfoService;
 
-    @Value("${user.home}")
+    @Value("${fileHome}")
     private String fileHome;
     @GetMapping("index")
     public String index(Model model) {

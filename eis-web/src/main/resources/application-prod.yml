@@ -4,3 +4,4 @@ spring:
     username: eis
     password: TkzhDz37mbHT4CSe
     driverClassName: com.mysql.cj.jdbc.Driver
+fileHome: /www

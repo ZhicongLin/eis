@@ -30,7 +30,7 @@ public class DeviceFrontController {
     DeviceService deviceService;
     @Resource
     IpqcItemService ipqcItemService;
-    @Value("${user.home}")
+    @Value("${fileHome}")
     private String fileHome;
 
     @GetMapping("/index")
