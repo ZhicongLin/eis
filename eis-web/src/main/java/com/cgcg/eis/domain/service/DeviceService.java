@@ -26,4 +26,6 @@ public interface DeviceService {
     void modifyAddr(Long deviceId, String addr);
 
     PageInfo<Device> findList(String keyword, int pageSize, int pageNum);
+
+    int checkUser(DeviceRecodeCheckVo checkVo);
 }

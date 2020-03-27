@@ -134,4 +134,9 @@ public class DeviceFrontController {
         return "ok";
     }
 
+    @PostMapping("/checkUser")
+    @ResponseBody
+    public int checkUser(DeviceRecodeCheckVo checkVo) {
+       return this.deviceService.checkUser(checkVo);
+    }
 }

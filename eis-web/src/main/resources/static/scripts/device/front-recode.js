@@ -31,7 +31,7 @@ $(function () {
             "    <div class='panel-body'>" +
             "        <p class='ptitle'>检查结果</p>" +
             "         <div class='col-lg-12'>" +
-            "             <span style='font-size: 18px'>" + (deviceRecord.status == 1 ? '正常' : '异常') + "</span>" +
+            "             <span style='font-size: 18px'>" + (deviceRecord.ipqcResult == 1 ? '正常' : '异常') + "</span>" +
             "         </div>" +
             "        <p class='ptitle'>检查内容</p><div class='col-lg-12'>" +
             "        <table class='table contentTable' style='border: 0'>" + createContent(data, deviceRecord) + "</table></div>" +

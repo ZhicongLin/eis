@@ -122,6 +122,13 @@ $(function () {
             }
         });
         $("#content").val(values.join(','));
-        $("#recode-form").submit();
+        $.post('/device/front/checkUser',
+            {ipqcName: $('input[name="ipqcName"]').val(), ipqcPhone: $('input[name="ipqcPhone"]').val()}, function (data) {
+            if (data === 1) {
+                $("#recode-form").submit();
+            } else {
+                alert("记录人信息错误")
+            }
+        });
     });
 });

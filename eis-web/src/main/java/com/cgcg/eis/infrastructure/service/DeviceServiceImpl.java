@@ -142,4 +142,10 @@ public class DeviceServiceImpl implements DeviceService {
         return page != null ? page.toPageInfo() : new PageInfo<>();
     }
 
+    @Override
+    public int checkUser(DeviceRecodeCheckVo recode) {
+        final IpqcUser ipqcUser = this.ipqcUserService.find(recode.getIpqcPhone(), recode.getIpqcName());
+        return ipqcUser != null ? 1 : 0;
+    }
+
 }
